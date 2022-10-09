@@ -80,7 +80,6 @@ function addToCart(button) {
   button.addEventListener("click", () => {
     cartNum.style.display = "flex"
       countProd += 1
-      console.log(countProd);
       cartNum.textContent = countProd
     
     button.disabled = true;
@@ -101,7 +100,6 @@ function addToCart(button) {
 
     let realNumone = Number(productPrice);
     priceCont.push(realNumone);
-    console.log(priceCont);
     localStorage.setItem("priceRange", JSON.stringify(priceCont));
 
     setProduct.push(productDetails);
@@ -112,18 +110,14 @@ function addToCart(button) {
 function removeItem(item) {
   item.addEventListener("click", () => {
     countProd -= 1
-      console.log(countProd);
       cartNum.textContent = countProd
     let mainPrice = JSON.parse(localStorage.getItem("priceRange"));
-    console.log(mainPrice);
     let newTotalPrice = totalPrice.textContent
     let newNewPrice = parseFloat(newTotalPrice.replace(/,/g, ''))
     let delPrice = item.parentElement.children[1].children[1].textContent;
     let numberOfItemPurchased = Number(item.parentElement.children[2].childNodes[1].children[2].textContent)
     let minusPrice = Number(delPrice)
     let substractNum = minusPrice * numberOfItemPurchased
-    
-    console.log(delPrice);
     let delImg = item.parentElement.childNodes[1].src;
     
     let delName = item.parentElement.children[1].childNodes[1].textContent;
@@ -134,17 +128,13 @@ function removeItem(item) {
     localStorage.setItem("priceRange",JSON.stringify(mainPrice))
 
     let moveOut = JSON.parse(localStorage.getItem("priceRange"))
-    // console.log(moveOut);
-    // console.log(mainPrice);
     let priced = mainPrice.map((m)=>{
       return m
     })
-    console.log(priced);
     totalPrice.innerHTML = priced;
 
 
     let fromStorage = JSON.parse(localStorage.getItem("purchased"));      
-    // console.log(newTotalPrice);
     let productDetails = {
       pic: delImg,
       name: delName,
@@ -156,7 +146,6 @@ function removeItem(item) {
 
       return remains;
     });
-    // addAndMinus()
     localStorage.setItem("purchased", JSON.stringify(fromStorage));
     showCart();
  
@@ -198,7 +187,6 @@ function showCart(cart) {
   let removeCont = document.querySelectorAll(".remove-cont");
 
   addAndMinus(plus, minus)
-  // addAndMinus(removeCont)
 
   removeCont.forEach((rollOut) => {
     removeItem(rollOut);
@@ -209,7 +197,6 @@ cartIcon.addEventListener("click", () => {
   showCart();
 });
 backArrow.addEventListener("click", () => {
-  console.log(showCartCont.innerHTML);
   if (showCartCont.innerHTML == "") {
     window.location.reload()
   }

@@ -50,15 +50,6 @@ cars.innerHTML = showCars.join("")
 
 let btn = document.querySelectorAll(".btns")
 
-// const plis = [2,3,4,67,7]
-
-// function red(total, num) {
-//     return total + num
-// }
-
-// let gone = plis.reduce(red)
-// console.log(gone);
-
 btn.forEach((btn1)=>{
     addToCart(btn1)
 })
