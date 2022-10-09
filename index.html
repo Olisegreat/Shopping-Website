@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="app.js" defer></script>
+    <script src="shoes.js" defer></script>
+    <script src="wears.js" defer></script>
+    <script src="gadget.js" defer></script>
+    <script src="cars.js" defer></script>
+    <title>Shopping Site</title>
+</head>
+<body>
+    <div id="top" class="w-full h-24 bg-cyan-500 flex justify-between p-5 items-center fixed">
+       <div class="flex justify-between w-full items-center flex-wrap"> 
+        <div class="flex items-center lg:justify-between lg:w-4/12 md:justify-between md:w-4/12 justify-between w-full mb-2.5 ">
+            <a href=""><h1 class="text-3xl">Ness Stores</h1></a>
+            <div class="md:text-base xl:text-4xl 2xl:text-4xl text-xs font-bold text-white animate-bounce cursor-pointer ">
+                Shop Now!
+            </div>
+        </div>    
+            <div>
+                <ul class="sm:hidden md:hidden lg:hidden xl:flex hidden">
+                    <a href=""><li class="p-5 hover:bg-white hover:delay-75">Home</li></a>
+                    <a href=""><li class="p-5 hover:bg-white hover:delay-75">Shoes</li></a>
+                    <a href=""><li class="p-5 hover:bg-white hover:delay-75">Wears</li></a>
+                    <a href=""><li class="p-5 hover:bg-white hover:delay-75">Gadgets</li></a>
+                    <a href=""><li class="p-5 hover:bg-white hover:delay-75">Cars</li></a>
+                </ul>
+            </div>
+            <div id="search-cont" class="flex">
+                <input type="text" id="inp1" class="rounded-sm pl-1 w-46">
+                <div class="w-8 text-center bg-cyan-600 text-xs flex items-center justify-center">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <div class="flex text-xs">
+                <a href="#"><p class="p-1 hover:bg-white hover:delay-75">Sign Up</p></a>
+                <a href="#"><p class="ml-2 p-1 hover:bg-white hover:delay-75">Login</p></a>
+            </div>
+    </div>
+        </div>
+       
+    <div class="text-end p-2 font-bold cursor-pointer fixed bg-blue-100 top-24 hidden" id="back-hand">
+        <span><i class="fa-solid fa-arrow-left"></i></span> Back
+    </div>
+    <div class="relative">
+        <div class="text-end p-2 font-bold cursor-pointer fixed right-0 bg-blue-100 top-24" id="cart-cont">
+            <div class="bg-blue-600 w-3  h-3 rounded-lg absolute right-1 text-white flex justify-center items-center text-xs hidden pb-0.5"id="cart-num"></div> 
+            Cart <span><i class="fa-solid fa-cart-shopping cart"></i></span>
+        </div>
+    </div>
+    <div id="carted-items" class="hidden pt-56">
+        <p class="text-lg font-bold pl-2">Total Price = &#8358;<span id="total-price" class="pl-px">000.00</span></p>
+        <div id="show-cart-cont" class="flex flex-wrap justify-center">
+
+        </div>
+    </div>
+
+    <div id="shop-cont">
+        <div class="flex  justify-center sm:p-12 pt-40 text-center flex-wrap">
+            <div class="border-2 sm:p-6 p-1.5 border-cyan-500 rounded-lg shadow-lg shadow-cyan-400/50 m-3 h-40 w-44 sm:h-max sm:w-max">
+                <div class="flex sm:w-44 flex-wrap">
+                    <img src="https://imageio.forbes.com/specials-images/imageserve/5d7bf51f7a8707000830e513/Shoe-prototypes/960x0.jpg?format=jpg&width=960" alt="" class="sm:w-20 sm:h-20 w-10 h-16 p-1">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKkHuCEvjZYBY6yrSjOgfD070M24--ZFqn3Q&usqp=CAU" alt="" class="sm:w-20 sm:h-20 w-10 h-16 p-1">
+                    <img src="https://static.nike.com/a/images/f_auto,cs_srgb/w_1920,c_limit/e6424c44-7b50-4acb-8c40-aa9712c29924/nike%E2%80%99s-best-casual-shoes-for-everyday-wear.jpg" alt="" class="sm:w-20 sm:h-20 w-10 h-16 p-1">
+                    <img src="https://cloudfront-us-east-2.images.arcpublishing.com/reuters/ZHF3KG4MWVJFLNUGM6V3KTDQDI.jpg" alt="" class="sm:w-20 sm:h-20 w-10 h-16 p-1">
+                </div>
+                <p class="text-xs pt-2">Check out Shoes for you!</p>
+                <a href="#shoes-cont" class="text-sm underline">Go to Shoes</a>
+            </div>
+            <div class="border-2 sm:p-6 p-1.5 border-cyan-500 rounded-lg shadow-lg shadow-cyan-400/50 m-3 h-40 w-44 sm:h-max sm:w-max">
+                <div class="flex sm:w-44 flex-wrap">
+                    <img src="https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/94/024154/1.jpg?8902" alt="" class="sm:w-20 sm:h-20 w-10 h-16 p-1">
+                    <img src="https://cdn.vox-cdn.com/thumbor/JHEXDgTvPUeSPc22gdRC-WLzMYQ=/0x0:3264x2448/1200x800/filters:focal(1371x963:1893x1485)/cdn.vox-cdn.com/uploads/chorus_image/image/63120396/image6.0.jpeg" alt="" class="sm:w-20 sm:h-20 w-10 h-16 p-1">
+                    <img src="https://thumbs.dreamstime.com/b/women-s-clothing-summer-spring-walks-cotton-green-trousers-basic-white-t-shirt-white-sneakers-vintage-camera-171171790.jpg" alt="" class="sm:w-20 sm:h-20 w-10 h-16 p-1">
+                    <img src="https://media.istockphoto.com/photos/stylish-business-clothing-for-businessman-picture-id504742864?k=20&m=504742864&s=612x612&w=0&h=nuy8uRAuB6xVTfuXeTOd8wFSBWwNNGZ0nK1qViA-Nv0=" alt="" class="sm:w-20 sm:h-20 w-10 h-16 p-1">
+                </div>
+                <p class="text-xs pt-2">Check out Wears for you!</p>
+                <a href="#wears-cont" class="text-sm underline">Go to Wears</a>
+            </div>
+            <div class="border-2 sm:p-6 p-1.5 border-cyan-500 rounded-lg shadow-lg shadow-cyan-400/50 m-3 h-40 w-44 sm:h-max sm:w-max">
+                <div class="flex sm:w-44 flex-wrap">
+                    <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-tech-2022-1643751399.jpg" alt="" class="sm:w-20 sm:h-20 w-10 h-16 p-1">
+                    <img src="https://thumbs.dreamstime.com/b/many-used-modern-electronic-gadgets-use-white-floor-reuse-recycle-concept-top-view-164230611.jpg" alt="" class="sm:w-20 sm:h-20 w-10 h-16 p-1">
+                    <img src="https://www.ripplesnigeria.com/wp-content/uploads/2021/09/new-iPhone-13.jpg" alt="" class="sm:w-20 sm:h-20 w-10 h-16 p-1">
+                    <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/macbook-accessories-2-1644872450.jpg" alt="" class="sm:w-20 sm:h-20 w-10 h-16 p-1">
+                </div>
+                <p class="text-xs pt-2">Check out Gadgets for you!</p>
+                <a href="#gadgets-cont" class="text-sm underline">Go to Gadgets</a>
+            </div>
+            <div class="border-2 sm:p-6 p-1.5 border-cyan-500 rounded-lg shadow-lg shadow-cyan-400/50 m-3 h-40 w-44 sm:h-max sm:w-max">
+                <div class="flex sm:w-44 flex-wrap">
+                    <img src="https://media.autoexpress.co.uk/image/private/s--J0_e67eq--/f_auto,t_content-image-full-mobile@1/v1585307179/autoexpress/2020/03/Best%20cars%20for%20students%202020%20header.jpg" alt="" class="sm:w-20 sm:h-20 w-10 h-16 p-1">
+                    <img src="https://www.moneycrashers.com/wp-content/uploads/2019/02/honda-crv-suv-810x455.jpg" alt="" class="sm:w-20 sm:h-20 w-10 h-16 p-1">
+                    <img src="https://f9z6u2y8.rocketcdn.me/public/blog/wp-content/uploads/2021/12/Top-10-Cheapest-Cars-in-Nigeria-and-their-Prices.jpg" alt="" class="sm:w-20 sm:h-20 w-10 h-16 p-1">
+                    <img src="https://pictures.topspeed.com/IMG/crop_webp/202004/top-10-cheap-cars-th-15_1440x1080.webp" alt="" class="sm:w-20 sm:h-20 w-10 h-16 p-1">
+                </div>
+                <p class="text-xs pt-2">Check out Cars for you!</p>
+                <a href="#cars-cont" class="text-sm underline">Go to Cars</a>
+            </div>
+            <div class="border-2 sm:p-6 p-1.5 border-cyan-500 rounded-lg shadow-lg shadow-cyan-400/50 w-60 h-40 w-44 sm:h-max sm:w-max">
+                <div class="flex sm:w-44 w-full justify-center flex-wrap">
+                   <img src="https://i.pinimg.com/originals/79/7c/e0/797ce08a947643fa7c1f693a127315bd.gif" alt="" class="sm:w-56 w-28 h-24 sm:h-40">
+                </div>
+                <p class="text-xs pt-2">Get notifications for new projects</p>
+                <a href="#" class="text-sm underline text-cyan-700">Subscribe</a>
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <!-- <img src="img/welcome.gif" alt="" class="w-8/12 h-52"> -->
+        </div>
+        <div class="pt-2">
+            <p class="p-4 text-4xl font-bold" id="shoes-cont">Shoes</p>
+            <div class="w-full flex flex-wrap justify-center lg:flex-no-wrap" id="shoes">
+                
+            </div>
+        </div>
+        <div class="pt-2" id="wears-cont">
+            <p class="p-4 text-4xl font-bold">Wears</p>
+            <div class="w-full flex flex-wrap justify-center" id="wears">
+                
+            </div>
+        </div>
+        <div class="pt-2" id="gadgets-cont">
+            <p class="p-4 text-4xl font-bold">Gadgets</p>
+            <div class="w-full flex flex-wrap justify-center" id="gadget">
+                
+            </div>
+        </div>
+        <div class="pt-2" id="cars-cont">
+            <p class="p-4 text-4xl font-bold">Cars</p>
+            <div class="w-full flex flex-wrap justify-center" id="cars">
+                
+            </div>
+        </div>
+    </div>
+    <div class="h-7 bg-gray-200 w-full text-xs text-center">
+        <p>&#169; Olise 2022 <span class="pl-3.5 text-gray-400"><a href="https://twitter.com/ness44g?s=20&t=Us31dtO76-esxXTr6qz1KA">My Twitter</a></span></p>
+    </div>
+   
+</body>
+</html>
